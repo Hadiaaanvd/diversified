@@ -47,6 +47,7 @@ function CarouselComponent({ images }) {
     slidesToScroll: 4,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
+    centerMode: true,
     responsive: [
       {
         breakpoint: 1600,
@@ -96,13 +97,9 @@ function CarouselComponent({ images }) {
                       key={idx}
                       className="image-container"
                       style={{ height: img.height }}
+                      onClick={() => openModal(img)}
                     >
-                      <img
-                        loading="lazy"
-                        onClick={() => openModal(img)}
-                        src={img.src}
-                        alt=""
-                      />
+                      <img src={img.src} alt="" loading="lazy" />
                       <div className="image-overlay"></div>
                     </div>
                   );
@@ -115,18 +112,14 @@ function CarouselComponent({ images }) {
 
       {selectedImage && (
         <div
-          className={`modal-overlay ${modalOpen ? "open" : ""}`}
+          className={`modal-overlay-2 ${modalOpen ? "open" : ""}`}
           onClick={closeModal}
         >
           <button className="close-button" onClick={closeModal}>
             X
           </button>
           <div className="modal">
-            <img
-              src={selectedImage.src}
-              alt=""
-              onClick={(e) => e.stopPropagation()} // Add this line to prevent event propagation
-            />
+            <img src={selectedImage.src} alt="" />
           </div>
         </div>
       )}
