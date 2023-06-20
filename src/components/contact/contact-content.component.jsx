@@ -1,74 +1,60 @@
 import React from "react";
-import fax from "../../assets/fax.svg";
-import phone from "../../assets/phone.svg";
-import location from "../../assets/location.svg";
-
 import "./contact-content.styles.scss";
 
 const ContactContent = () => {
   return (
     <div className="contact-content-component">
       <div className="contact-info">
-        <div className="contact-info-container">
-          <h2>Contact Info</h2>
-          <div className="subtext">
-            If you’ve got questions or ideas you would like to share, send a
-            message. For anything more specific, please use one of the addresses
-            listed below.
-          </div>
-
-          <div className="subtext">
-            Player and Company is an equal opportunity employer.
-          </div>
-
-          <div className="label">
-            <div className="img-container">
-              <img src={location} alt="" />
-            </div>
-            <div>
-              Address
-              <span className="subtext">
-                531 Bishop Street N.W. Atlanta, GA 30318
-              </span>
-            </div>
-          </div>
-          <div className="label">
-            <div className="img-container">
-              <img src={phone} alt="" />
-            </div>
-            <div>
-              Office
-              <span className="subtext">(404) 351-3481</span>
-            </div>
-          </div>
-          <div className="label">
-            <div className="img-container">
-              <img src={fax} alt="" />
-            </div>
-            <div>
-              Fax
-              <span className="subtext">(404) 355-5502</span>
-            </div>
-          </div>
-        </div>
-
         <div className="contact-form">
-          <h2>Let's Talk</h2>
-          <h3>Meet us & we can help you</h3>
+          <div className="red subtext">
+            Employment verification should be directed to{" "}
+            <a href="mailto:someone@yoursite.com">payroll@dusllc.com</a>
+          </div>
+          {/* <h3>Meet us & we can help you</h3> */}
           <input type="text" placeholder="Your Name" />
           <input type="text" placeholder="Your Email" />
-          <textarea type="text" placeholder="Your Message" />
+          <textarea
+            type="text"
+            rows={2}
+            placeholder="Service Request or Inquiry"
+          />
+          <input
+            type="text"
+            placeholder="What is thirteen minus 6? (Are you a real person?)"
+          />
           <button>Submit</button>
+        </div>
+        <div className="contact-info-container">
+          {/* <h2>Contact Info</h2> */}
           <div className="subtext">
-            After we get some information from you, we’ll set up a time to
-            discuss your project in further detail.
+            Get in touch and we’ll get back to you as soon as we can. We look
+            forward to hearing from you!
+          </div>
+
+          <div className="label">
+            <i className="fa-solid fa-house"></i>
+            <span className="subtext">
+              Diversified Utility Services LLC 5371 Cook Rd Morrow GA 30260
+            </span>
+          </div>
+          <div className="label">
+            <i className="fa-solid fa-phone"></i>
+            <span className="subtext">470.427.3655</span>
+          </div>
+          <div className="label">
+            <i className="fa-solid fa-fax"></i>
+            <span className="subtext">404.254.3391</span>
+          </div>
+          <div className="label">
+            <i className="fa-solid fa-envelope"></i>
+            <span className="subtext">info@dusllc.com</span>
           </div>
         </div>
       </div>
 
       <iframe
         title="location"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1657.6600748450248!2d-84.4231864862442!3d33.80405033413619!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f505914031fc03%3A0x80c8403706d9febd!2s531%20Bishop%20St%20NW%2C%20Atlanta%2C%20GA%2030318!5e0!3m2!1sen!2sus!4v1682644273353!5m2!1sen!2sus"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26582.8614329485!2d-84.322331!3d33.608997!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f4fee5612a5687%3A0x8810a6208675f6e1!2sDiversified%20Utility%20Services%20LLC!5e0!3m2!1sen!2sus!4v1687285092959!5m2!1sen!2sus"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
