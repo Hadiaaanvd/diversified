@@ -7,6 +7,7 @@
     padding:30px 14vw;
     margin-bottom:50px;
     @media only screen and (max-width: 500px) {
+        margin-top:40px !important;
         padding:20px 30px;
     }
     
@@ -18,9 +19,14 @@
         padding:40px;
         width:100%;
         align-items: center;
-        // flex-wrap: wrap;
         justify-content: space-between;
         display:flex;
+        @media only screen and (max-width: 768px) {
+            padding:20px;
+            flex-wrap: wrap;
+         }
+     
+        
         .image-container{
             // width:500px;
             min-width:40%;
@@ -38,6 +44,10 @@
      
             line-height: 2;
             margin-right:50px;
+            @media only screen and (max-width: 768px) {
+                margin:0;
+                margin-bottom:20px;
+             }
           
         }
     }
