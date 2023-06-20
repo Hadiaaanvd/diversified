@@ -4,6 +4,7 @@
     position: absolute;
     display: flex;
     width:100%;
+    
     padding:5px 30px;
     top:0;
     z-index:10000;
@@ -12,8 +13,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width:200px;
+        width:250px;
         border-radius:5px;
+        @media only screen and (max-width: 508px) {
+            width:200px;
+        }
 
     }
    
@@ -152,6 +156,8 @@
     .logo{
         cursor: pointer;
         max-width:100%;
+        height:calc(30px + 1vw);
+       
     }
 
 }

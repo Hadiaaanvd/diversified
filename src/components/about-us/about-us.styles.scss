@@ -1,35 +1,53 @@
 .about-us-component{
     margin-top:100px !important;
     filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
-    margin:0em 40px 4em;
     display:flex;
     align-items: center;
     flex-direction: column;
+    padding:30px 14vw;
+    margin-bottom:50px;
+    @media only screen and (max-width: 500px) {
+        margin-top:40px !important;
+        padding:20px 30px;
+    }
     
     .main-about{
+        border-radius:10px;
         z-index: 10;
         position: relative;
         background-color: white;
-        max-width:1400px;
         padding:40px;
         width:100%;
         align-items: center;
-        flex-wrap: wrap;
         justify-content: space-between;
         display:flex;
+        @media only screen and (max-width: 768px) {
+            padding:20px;
+            flex-wrap: wrap;
+         }
+     
+        
         .image-container{
-            width:500px;
-            max-width:100% !important;
+            // width:500px;
+            min-width:40%;
+          
             img{
-                height:550px;
+                height:100%;
                 object-fit: contain;
                 width:100%;
             }
         }
         .content-container{
+            font-size:14px;
+            text-align: justify;
             color:black;
-            width:650px;
+     
             line-height: 2;
+            margin-right:50px;
+            @media only screen and (max-width: 768px) {
+                margin:0;
+                margin-bottom:20px;
+             }
           
         }
     }

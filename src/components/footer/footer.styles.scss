@@ -1,7 +1,7 @@
 .footer-component{
     clip-path: polygon(50% 17%, 77% 0, 100% 0, 100% 72%, 100% 100%, 32% 100%, 0 100%, 0 0, 21% 0);
-    height: 400px;
-    background: #0b69a1;
+    height: 310px;
+    background: #525252;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -9,6 +9,10 @@
     padding:100px 20px 20px;
     z-index: 100;
     position: relative;
+    @media only screen and (max-width: 800px) {
+        height:290px;
+    }
+    
     .logos-container{
         width: 80%;
         justify-content: space-around;
@@ -31,7 +35,7 @@
         }
         @media only screen and (max-width: 800px) {
            
-            margin-bottom:30px;
+            // margin-bottom:30px;
         }
     }
     .navitems{
