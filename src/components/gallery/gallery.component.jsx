@@ -38,6 +38,7 @@ function CarouselComponent({ images }) {
   };
 
   const settings = {
+    accessibility: false,
     dots: false,
     infinite: true,
     speed: 500,
