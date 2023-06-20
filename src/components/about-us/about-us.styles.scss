@@ -1,0 +1,46 @@
+.about-us-component{
+    margin-top:100px !important;
+    filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+    margin:0em 40px 4em;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    
+    .main-about{
+        z-index: 10;
+        position: relative;
+        background-color: white;
+        max-width:1400px;
+        padding:40px;
+        width:100%;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        display:flex;
+        .image-container{
+            width:500px;
+            max-width:100% !important;
+            img{
+                height:550px;
+                object-fit: contain;
+                width:100%;
+            }
+        }
+        .content-container{
+            color:black;
+            width:650px;
+            line-height: 2;
+          
+        }
+    }
+  
+
+
+}
+.blue-background{
+    background-color: #0b69a1;
+    height:240px;
+    margin-top:-200px;
+    width:100%;
+    margin-bottom:100px;
+}

@@ -1,0 +1,144 @@
+.home-projects-components{
+    padding:30px 14vw;
+    @media only screen and (max-width: 500px) {
+        padding:20px 30px;
+    }
+    h2{
+        font-family: 'Source Sans Pro';
+        font-weight: 700;
+        font-size: calc(10px + 2.4vw);
+        cursor: pointer;
+        padding-bottom:10px;
+        letter-spacing: 0.145em;
+        text-transform: uppercase;
+        color: #454545;
+        border-bottom:3px solid #bdbdbd;
+        margin-bottom:1em;
+        text-align: center;
+        position: relative;
+        &:before{
+            transition: all 1s ease-in-out; 
+            content: "";
+            position: absolute;
+            bottom:-3px;    
+            height:4px;
+            width:0%;
+            left:0;
+            background-color: #1c7cd7;
+
+        }
+        .e-logo{
+            margin-top:-10px;
+            width:100px;
+
+        }
+        &:hover{
+            .e-logo{
+              path {
+                fill:#1c7cd7;
+              }
+    
+            }
+            
+            span{
+                color:#1c7cd7;
+                transition: all 0.5s ease-in-out; 
+            }
+            &:before{
+                content: "";
+                position: absolute;
+                bottom:-3px;    
+                left:0;
+                height:4px;
+                width:100%;
+                transition: all 1s ease-in-out; 
+                background-color: #1c7cd7;
+                
+            }
+        }
+        span{
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+           
+           
+        }
+       
+    }
+    .projects-container{
+        display: flex;
+        flex-wrap: wrap;
+        height:fit-content;
+        align-items: center;
+        justify-content: space-between;
+        
+        .project{
+            filter: grayscale(100%);
+            min-height:120px;
+            border-radius:10px;
+            width:33%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            @media only screen and (max-width: 500px) {
+               padding:0
+            }
+            .background{
+                margin:10px;
+                padding:10px;
+                border-radius: 8px;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                background-color: #036998;
+            }
+            &:hover{
+                box-shadow: 0 1.000rem 2.125rem rgba(0,53,70,0.15);
+                filter: grayscale(0) !important;
+            }
+            &:first-child{
+                &:before{
+                    content: "";
+                    position: absolute;
+                    width:1px;
+                    height:80px;
+                    left:0;
+                    background-color: #d9d9d9;
+                }
+            }
+          
+            &:after{
+                content: "";
+                position: absolute;
+                width:1px;
+                height:80px;
+                right:0;
+                background-color: #d9d9d9;
+            }
+        }
+        img{
+            width:calc(100% - 20px);
+            max-width:200px;
+            &.small{
+                height:auto;
+                width:45%;
+            }
+            &.big{
+                max-width:280px;
+            }
+        }
+       
+        .title{
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            margin-top:20px;
+            font-size: calc(5px + 1.1vw);
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            color:#606060
+        }
+    }
+}
