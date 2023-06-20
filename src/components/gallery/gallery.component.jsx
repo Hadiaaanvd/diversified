@@ -103,6 +103,7 @@ function CarouselComponent({ images }) {
                         src={img.src}
                         alt=""
                       />
+                      <div className="image-overlay"></div>
                     </div>
                   );
                 })}
