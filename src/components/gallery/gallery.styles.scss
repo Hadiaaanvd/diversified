@@ -1,0 +1,152 @@
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  .slick-slider {
+    height: 600px;
+    .slider-item {
+      height: 600px;
+      position: relative;
+      width: 400px;
+      .slider-content {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        .slider-body {
+          height: 100%;
+          margin: 10px;
+          background-color: white;
+          display: flex !important;
+          align-items: center;
+          justify-content: center;
+          font-size: xx-large;
+          color: white;
+          font-weight: bold;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+
+          .image-container {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            img {
+              cursor: pointer;
+              height: 100%;
+              width: 100%;
+              transition: 0.2s;
+              object-fit: cover;
+              &:hover {
+                transform: scale(1.05);
+              }
+            }
+          }
+          &.more-images {
+            .image-container {
+              &:first-child {
+                margin-bottom: 10px;
+              }
+              &:last-child {
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .slick-prev,
+    .slick-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      font-size: 50px;
+      color: black;
+      background-color: rgba(255, 255, 255, 0.571);
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      transition: 0.3s;
+      @media (max-width: 768px) {
+        height: 25px;
+        width: 25px;
+      }
+      &::before {
+        display: none;
+      }
+      display: flex;
+      justify-content: center;
+      svg {
+        height: 100%;
+        opacity: 0.75;
+        transition: 0.3s;
+      }
+      &:hover {
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+
+    .slick-prev {
+      left: 10px;
+    }
+
+    .slick-next {
+      right: 10px;
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    cursor: pointer;
+    .close-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      color: #fff;
+      font-size: 25px;
+    }
+    &.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal {
+      background-color: #fff;
+      max-width: 80%;
+      max-height: 80%;
+      overflow: hidden; /* Remove the 'auto' value */
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+
+      img {
+        cursor: auto;
+        max-width: 100%; /* Change 'width' to 'max-width' */
+        max-height: 100%; /* Add 'max-height' property */
+        object-fit: contain; /* Adjust the 'object-fit' value as needed */
+      }
+    }
+  }
+}
