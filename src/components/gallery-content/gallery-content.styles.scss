@@ -4,5 +4,10 @@
     min-height:100vh;
     display: flex;
     align-items: center;
+    
+    padding: 30px 14vw;
+    @media (max-width: 500px) {
+        padding: 20px 30px;
+    }
 
 }

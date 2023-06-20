@@ -4,9 +4,10 @@ import second from "../../assets/banner/2.jpg";
 import first from "../../assets/banner/1.jpg";
 import third from "../../assets/banner/3.jpg";
 import fourth from "../../assets/banner/4.jpg";
+import fifth from "../../assets/banner/5.jpg";
 import "./banner-inner.styles.scss";
 
-const imagesArray = [first, second, third, fourth];
+const imagesArray = [first, second, third, fourth, fifth];
 const BannerInner = ({ index }) => {
   const location = useLocation();
   const heading = location.pathname
