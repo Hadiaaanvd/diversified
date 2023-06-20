@@ -4,7 +4,7 @@ import ContactContent from "../../components/contact/contact-content.component";
 
 const Contact = () => (
   <div>
-    <BannerInner index={1} />
+    <BannerInner index={4} />
     <ContactContent />
   </div>
 );
