@@ -42,12 +42,12 @@ function CarouselComponent({ images }) {
   const settings = {
     dots: false,
     infinite: width > 480 ? true : false,
+    accessibility: selectedImage ? false : true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
-    centerMode: true,
     responsive: [
       {
         breakpoint: 1600,
