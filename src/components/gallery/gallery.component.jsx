@@ -1,13 +1,11 @@
 import React from "react";
 import Slider from "react-slick";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { ReactComponent as Arrow } from "../../assets/gallery/arrow.svg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./gallery.styles.scss";
 
 function CarouselComponent({ images }) {
-  const { width } = useWindowDimensions();
   const [modalOpen, setModalOpen] = React.useState(false);
   const [selectedImage, setSelectedImage] = React.useState(null);
 
@@ -41,8 +39,7 @@ function CarouselComponent({ images }) {
 
   const settings = {
     dots: false,
-    infinite: width > 480 ? true : false,
-    accessibility: selectedImage ? false : true,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,

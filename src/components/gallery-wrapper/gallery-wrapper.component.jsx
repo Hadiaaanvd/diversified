@@ -8,7 +8,7 @@ const GalleryWrapper = ({ imagesSrc }) => {
   const images = useMasornyImages({ imagesSrc });
 
   return (
-    <div className="gallery-wrapper-component container">
+    <div className="gallery-wrapper-component">
       <GalleryCarousel images={images} actualImages={imagesSrc} />
     </div>
   );
