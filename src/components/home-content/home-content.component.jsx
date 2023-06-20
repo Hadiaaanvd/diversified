@@ -98,8 +98,8 @@ const HomeContent = () => {
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="swiper_container"
       >
-        {services.map((service) => (
-          <SwiperSlide>
+        {services.map((service, index) => (
+          <SwiperSlide key={index}>
             <div className="service-slide-container">
               <div className="service-icon">
                 <ServiceImg className="image" />

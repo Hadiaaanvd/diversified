@@ -6,11 +6,11 @@ import "./home-about.styles.scss";
 
 const HomeProjects = () => {
   return (
-    <div className="home-about-components container">
+    <div className="home-about-components">
       <div className="about-us-container">
         <div className="about-us-images">
-          <img src={about1} alt="" />
           <img src={about2} alt="" />
+          <img src={about1} alt="" />
         </div>
         <div className="about-us-text">
           <h3>About Us</h3>
