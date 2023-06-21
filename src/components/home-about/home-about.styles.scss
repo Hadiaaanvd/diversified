@@ -1,7 +1,7 @@
 .home-about-components{
     margin-top:100px;
     margin-bottom:100px;
-    padding:30px 14vw;
+    padding:30px 13vw;
     @media only screen and (max-width: 500px) {
         padding:20px 30px;
     }
@@ -11,8 +11,14 @@
         justify-content: space-between;
         margin:0 auto;
         .about-us-text{
+            font-size: calc(12px + 0.5vw);
+            line-height: 1.8;
             width:47%;
             margin-top:-100px;
+        }
+        h2{
+            text-align: left;
+            margin-bottom:20px;
         }
 
         .about-us-images{
@@ -57,5 +63,8 @@
     }
     button{
         margin-top:30px;
+        font-size:14px;
+        font-weight: 500;
+        padding:10px 30px;
     }
 }

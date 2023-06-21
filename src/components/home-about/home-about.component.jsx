@@ -13,7 +13,7 @@ const HomeProjects = () => {
           <img src={about1} alt="" />
         </div>
         <div className="about-us-text">
-          <h3>About Us</h3>
+          <h2>About Us</h2>
           <div>
             While we dedicated to investing in tools, equipment, and technology
             to provide our customers with a high-quality product, our most

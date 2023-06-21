@@ -1,11 +1,11 @@
 import React from "react";
 import BannerInner from "../../components/banner-inner/banner-inner.component";
-import ContactContent from "../../components/contact/contact-content.component";
+import EmploymentContent from "../../components/employment/employment-content.component";
 
 const Employment = () => (
   <div>
     <BannerInner index={3} />
-    <ContactContent />
+    <EmploymentContent />
   </div>
 );
 

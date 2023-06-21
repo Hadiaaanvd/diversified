@@ -8,7 +8,9 @@ const Banner = () => {
     <div className="banner-component">
       <div className="banner-content">
         <h1>
-          Natural <br /> Gas Utility <br /> Contruction
+          <span>Natural</span>
+          <span>Gas Utility</span>
+          <span className="last-span">Contruction</span>
         </h1>
         <p>
           Diversified Utility Services, a minority-owned business, was

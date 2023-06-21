@@ -1,94 +1,65 @@
 import React from "react";
-import fax from "../../assets/fax.svg";
-import phone from "../../assets/phone.svg";
-import location from "../../assets/location.svg";
-import logo1 from "../../assets/contact/logo1.gif";
-import logo3 from "../../assets/contact/logo3.svg";
-import logo4 from "../../assets/contact/logo4.png";
-import logo5 from "../../assets/contact/logo5.png";
-import "./contact-content.styles.scss";
+import FileUpload from "../file-upload/file-upload.component";
+import "./employment-content.styles.scss";
 
 const EmploymentContent = () => {
   return (
-    <div className="contact-content-component">
-      <div className="contact-info">
-        <div className="contact-info-container">
-          <h2>Contact Info</h2>
-          <div className="subtext">
-            If you’ve got questions or ideas you would like to share, send a
-            message. For anything more specific, please use one of the addresses
-            listed below.
-          </div>
-
-          <div className="subtext">
-            Player and Company is an equal opportunity employer.
-          </div>
-
-          <div className="label">
-            <div className="img-container">
-              <img src={location} alt="" />
-            </div>
-            <div>
-              Address
-              <span className="subtext">
-                531 Bishop Street N.W. Atlanta, GA 30318
-              </span>
-            </div>
-          </div>
-          <div className="label">
-            <div className="img-container">
-              <img src={phone} alt="" />
-            </div>
-            <div>
-              Office
-              <span className="subtext">(404) 351-3481</span>
-            </div>
-          </div>
-          <div className="label">
-            <div className="img-container">
-              <img src={fax} alt="" />
-            </div>
-            <div>
-              Fax
-              <span className="subtext">(404) 355-5502</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="contact-form">
-          <h2>Let's Talk</h2>
-          <h3>Meet us & we can help you</h3>
-          <input type="text" placeholder="Your Name" />
-          <input type="text" placeholder="Your Email" />
-          <textarea type="text" placeholder="Your Message" />
-          <button>Submit</button>
-          <div className="subtext">
-            After we get some information from you, we’ll set up a time to
-            discuss your project in further detail.
-          </div>
-        </div>
+    <div className="employment-content-component">
+      <div className="subtext">
+        We look forward to you joining our team. Please fill out the preliminary
+        application below.
       </div>
-      <div className="assosiations">
-        <div className="logo">
-          <img
-            src="https://www.mcaa.org/ncpwb/wp-content/uploads/sites/4/2019/12/NCPWB_logo.svg"
-            alt=""
+      <div className="contact-info row">
+        <div className="subtext">
+          <b> Preliminary Application NOTE:</b> There may NOT be an opening at
+          the present time for the position for which you are applying. <br />
+          Open positions are listed at{" "}
+          <a href="EmployGeorgia.com">EmployGeorgia.com</a>.
+        </div>
+        <div className="contact-form  col-lg-6">
+          <input type="text" placeholder="Position Applying For: *" />
+
+          <input
+            type="text"
+            placeholder="How did you find out about this position?"
+          />
+          <input type="text" placeholder="First Name *" />
+          <input type="text" placeholder="City of Residence *" />
+          <input type="text" placeholder="Phone *" />
+          <input
+            type="text"
+            placeholder="Are you eligible for employment in the United States? *"
+          />
+          <input
+            type="text"
+            placeholder="Do you any relatives or friends currently employed for or have previously been employed by Diversified Utility Services? *"
+          />
+          <input
+            type="text"
+            placeholder="Do you have any experience in the field of natural gas or underground utility construction? *"
           />
         </div>
-        <img src={logo5} alt="" />
-        <img src={logo1} alt="" />
-        <img src={logo4} alt="" />
-        <div className="logo">
-          <img src={logo3} alt="" />
+        <div className="contact-info-container col-lg-6">
+          <input type="text" placeholder="Location Preference: *" />
+          <input type="text" placeholder="Email *" />
+          <input type="text" placeholder="Last Name *" />
+          <input type="text" placeholder="State of Residence *" />
+          <input type="text" placeholder="Are you currently employed?" />
+          <input type="text" placeholder="Are you atleast 18 years old? *" />
+          <input
+            type="text"
+            placeholder="Do you have a valid drivers license? *"
+          />
+          <input
+            type="text"
+            placeholder="Were you referred by a Diversified Utility Services employee to apply? *"
+          />
         </div>
       </div>
-      <iframe
-        title="location"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1657.6600748450248!2d-84.4231864862442!3d33.80405033413619!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f505914031fc03%3A0x80c8403706d9febd!2s531%20Bishop%20St%20NW%2C%20Atlanta%2C%20GA%2030318!5e0!3m2!1sen!2sus!4v1682644273353!5m2!1sen!2sus"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+      <FileUpload />
+      <div className="col-12 mx-auto text-center">
+        <button>Submit</button>
+      </div>
     </div>
   );
 };
