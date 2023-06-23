@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import ScrollToTop from "./components/scroll/scroll.jsx";
+import { Animator, ScrollContainer, ScrollPage } from "react-scroll-motion";
 
 import Layout from "./layout";
 
@@ -10,10 +11,13 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <ScrollToTop />
-      <Routes>
-        <Route path="*" element={<Layout />} />
-      </Routes>
+      <ScrollContainer>
+        <ScrollToTop />
+
+        <Routes>
+          <Route path="*" element={<Layout />} />
+        </Routes>
+      </ScrollContainer>
     </div>
   );
 }

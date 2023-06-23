@@ -9,9 +9,11 @@
       }
 
       .swiper-slide {
-        background-color:white;
+      margin-top:10px;
+       background-color: #f5fdfefb;
         // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+        // filter: drop-shadow(0px 8px 24px rgba(32, 32, 32, 0.1));
+        box-shadow: rgba(164, 208, 225, 0.4) 0px 7px 29px 0px;
         border-radius:30px;
         width: 28.8vw;
         height: 70vh;
@@ -40,7 +42,7 @@
             .service-slide-container{
               margin-top:4px;
               height:100%;
-              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+              box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
               display:flex !important;
 
             }
@@ -106,20 +108,20 @@
         height:100%;
         min-height:fit-content;
         padding:20px 0;
-     
         background:rgb(250, 249, 249);
-        background-color: white;
+        background-color: rgb(169, 169, 169);
         border-radius:30px;
         flex-direction: column;
         background-repeat: no-repeat !important;
         background-size:100% 50%   !important;
         background-position: bottom !important;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.93) 0%,
-              rgb(255, 255, 255,0.9)), url(../../assets/service/background-services.png);
+        background: linear-gradient(to bottom, #f5fdfefb 0%,
+              #eef8faed), url(../../assets/service/background-services.png);
         .heading-container, .description-container{
             margin:20px 0;
             text-align: center;
             font-size:22px;
+            background-color: transparent;
             font-weight: 600;
             padding:0 calc(2vw + 20px);
             color:black;

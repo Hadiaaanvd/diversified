@@ -9,6 +9,8 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import { Animator, batch, FadeIn, MoveIn } from "react-scroll-motion";
+
 import "./home-content.styles.scss";
 const services = [
   {
@@ -76,7 +78,10 @@ const services = [
 const HomeContent = () => {
   return (
     <div className="home-content-component">
+      {/* <Animator animation={batch(FadeIn(), MoveIn(10, 0))}> */}
       <h2>Our Services</h2>
+      {/* </Animator>
+      <Animator animation={batch(FadeIn(), MoveIn(100, 0))}> */}
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -121,6 +126,7 @@ const HomeContent = () => {
           </div>
         </div>
       </Swiper>
+      {/* </Animator> */}
     </div>
   );
 };
