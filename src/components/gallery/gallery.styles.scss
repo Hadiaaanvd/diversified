@@ -154,6 +154,25 @@
       opacity: 1;
       pointer-events: auto;
     }
+    .buttons-container {
+      width: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      button {
+        background-color: black;
+        border-radius: 10px;
+        svg {
+          width: 10px;
+          fill: white;
+        }
+
+        &:last-child {
+          transform: rotate(180deg);
+        }
+      }
+    }
 
     .modal {
       max-width: 80%;
@@ -165,6 +184,9 @@
       height: 100%;
       display: flex;
       justify-content: center;
+      @media (max-width: 768px) {
+        max-width: 70%;
+      }
       img {
         cursor: auto;
         max-width: 100%; /* Change 'width' to 'max-width' */

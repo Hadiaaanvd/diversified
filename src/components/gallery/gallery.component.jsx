@@ -5,9 +5,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./gallery.styles.scss";
 
-function CarouselComponent({ images }) {
+function CarouselComponent({ images, actualImages }) {
+  console.log(images);
   const [modalOpen, setModalOpen] = React.useState(false);
-  const [selectedImage, setSelectedImage] = React.useState(null);
+  const [selectedImage, setSelectedImage] = React.useState(0);
 
   const CustomPrevArrow = (props) => {
     const { onClick } = props;
@@ -27,13 +28,13 @@ function CarouselComponent({ images }) {
     );
   };
 
-  const openModal = (image) => {
-    setSelectedImage(image);
+  const openModal = (index) => {
+    setSelectedImage(index);
     setModalOpen(true);
   };
 
   const closeModal = () => {
-    setSelectedImage(null);
+    setSelectedImage(0);
     setModalOpen(false);
   };
 
@@ -78,6 +79,23 @@ function CarouselComponent({ images }) {
     ],
   };
 
+  const handlePrevious = (e) => {
+    e.stopPropagation();
+    if (selectedImage === 0) {
+      setSelectedImage(actualImages.length - 1);
+    } else {
+      setSelectedImage(selectedImage - 1);
+    }
+  };
+  const handleNext = (e) => {
+    e.stopPropagation();
+    if (selectedImage === actualImages.length - 1) {
+      setSelectedImage(0);
+    } else {
+      setSelectedImage(selectedImage + 1);
+    }
+  };
+
   return (
     <div className="slider-container">
       <Slider {...settings}>
@@ -89,26 +107,24 @@ function CarouselComponent({ images }) {
                   item.images.length > 1 ? "more-images" : ""
                 }`}
               >
-                {item.images.map((img, idx) => {
-                  return (
-                    <div
-                      key={idx}
-                      className="image-container"
-                      style={{ height: img.height }}
-                      onClick={() => openModal(img)}
-                    >
-                      <img src={img.src} alt="" loading="lazy" />
-                      <div className="image-overlay"></div>
-                    </div>
-                  );
-                })}
+                {item.images.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="image-container"
+                    style={{ height: img.height }}
+                    onClick={() => openModal(img.index)}
+                  >
+                    <img src={img.src} alt="" loading="lazy" />
+                    <div className="image-overlay"></div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         ))}
       </Slider>
 
-      {selectedImage && (
+      {modalOpen && (
         <div
           className={`modal-overlay-2 ${modalOpen ? "open" : ""}`}
           onClick={closeModal}
@@ -116,8 +132,21 @@ function CarouselComponent({ images }) {
           <button className="close-button" onClick={closeModal}>
             X
           </button>
+          <div className="buttons-container">
+            <button onClick={handlePrevious}>
+              <Arrow />
+            </button>
+
+            <button onClick={handleNext}>
+              <Arrow />
+            </button>
+          </div>
           <div className="modal">
-            <img src={selectedImage.src} alt="" />
+            <img
+              onClick={(e) => e.stopPropagation()}
+              src={actualImages[selectedImage].src}
+              alt=""
+            />
           </div>
         </div>
       )}
