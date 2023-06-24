@@ -1,0 +1,134 @@
+[
+  {
+    "src": "assets/gallery-images/1.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/2.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/3.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/4.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/5.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/6.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/7.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/8.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/9.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/10.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/11.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/12.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/13.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/14.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/15.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/16.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/17.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/18.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/19.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/20.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/21.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/22.jpg",
+    "orientation": "portrait"
+  },
+  {
+    "src": "assets/gallery-images/23.jpeg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/24.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/25.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/26.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/27.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/28.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/29.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/30.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/31.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/32.jpg",
+    "orientation": "landscape"
+  },
+  {
+    "src": "assets/gallery-images/33.jpg",
+    "orientation": "portrait"
+  }
+]

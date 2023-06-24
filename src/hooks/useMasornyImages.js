@@ -22,7 +22,9 @@ function useMasonryImages({ imagesSrc }) {
       if (imagesSrc.length >= 6) {
         // First set: one image
         newImages.push({
-          images: [{ src: imagesSrc[0], height: "100%", index: idCounter++ }],
+          images: [
+            { src: imagesSrc[0].src, height: "100%", index: idCounter++ },
+          ],
         });
         // Second set: two images
         let imageObj1Height = getRandomPercent(0.4, 0.6);
@@ -30,12 +32,12 @@ function useMasonryImages({ imagesSrc }) {
         newImages.push({
           images: [
             {
-              src: imagesSrc[1],
+              src: imagesSrc[1].src,
               height: imageObj1Height + "%",
               index: idCounter++,
             },
             {
-              src: imagesSrc[2],
+              src: imagesSrc[2].src,
               height: imageObj2Height + "%",
               index: idCounter++,
             },
@@ -43,7 +45,9 @@ function useMasonryImages({ imagesSrc }) {
         });
         // Third set: one image
         newImages.push({
-          images: [{ src: imagesSrc[3], height: "100%", index: idCounter++ }],
+          images: [
+            { src: imagesSrc[3].src, height: "100%", index: idCounter++ },
+          ],
         });
         // Fourth set: two images
         imageObj1Height = getRandomPercent(0.4, 0.6);
@@ -51,12 +55,12 @@ function useMasonryImages({ imagesSrc }) {
         newImages.push({
           images: [
             {
-              src: imagesSrc[4],
+              src: imagesSrc[4].src,
               height: imageObj1Height + "%",
               index: idCounter++,
             },
             {
-              src: imagesSrc[5],
+              src: imagesSrc[5].src,
               height: imageObj2Height + "%",
               index: idCounter++,
             },
@@ -65,29 +69,27 @@ function useMasonryImages({ imagesSrc }) {
       }
 
       for (let i = 6; i < imagesSrc.length; i++) {
+        let imageObj1Height = getRandomPercent(0.4, 0.6);
         const imageObj1 = {
-          src: imagesSrc[i],
+          src: imagesSrc[i].src,
+          height: imageObj1Height + "%", // assign height here
           index: idCounter++,
         };
 
-        // Load image to get its dimensions
-        let img = new Image();
-        img.src = imagesSrc[i];
-        await new Promise((r) => {
-          img.onload = r;
-        });
+        // Get EXIF data to determine image orientation
+        const orientation = imagesSrc[i].orientation;
+
         // Check if the image is portrait
-        if (img.height > img.width) {
+        if (orientation === "portrait") {
           // If the image is portrait, set its height to 100% and add it to the array by itself
           imageObj1.height = "100%";
           newImages.push({ images: [imageObj1] });
         } else {
           // If the image is not portrait (i.e., landscape), pair it with the next image, if one exists
           if (imagesSrc[i + 1]) {
-            let imageObj1Height = getRandomPercent(0.4, 0.6);
             let imageObj2Height = 100 - imageObj1Height;
             const imageObj2 = {
-              src: imagesSrc[i + 1],
+              src: imagesSrc[i + 1].src,
               height: imageObj2Height + "%",
               index: idCounter++,
             };
@@ -95,7 +97,6 @@ function useMasonryImages({ imagesSrc }) {
             i++; // Skip next image as it's already been processed
           } else {
             // If there's no next image, just add the current image by itself
-            imageObj1.height = "100%";
             newImages.push({ images: [imageObj1] });
           }
         }
