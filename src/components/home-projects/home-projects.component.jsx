@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import project1 from "../../assets/projects/project1.jpg";
 import project2 from "../../assets/projects/project2.png";
@@ -50,9 +50,45 @@ const projects = [
   },
 ];
 const HomeProjects = () => {
+  const projectsRef = useRef(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = projectsRef.current;
+      const spans = element.querySelectorAll(".animation-target");
+      if (element && isElementInViewport(element)) {
+        spans.forEach((span) => {
+          span.classList.add("run-animation");
+        });
+      } else {
+        spans.forEach((span) => {
+          span.classList.remove("run-animation");
+        });
+      }
+    };
+
+    const isElementInViewport = (el) => {
+      const rect = el.getBoundingClientRect();
+      console.log("rect", rect, rect.bottom <= window.innerHeight);
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerWidth || document.documentElement.clientWidth) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
+      );
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check on component mount
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <div className="home-projects-components">
-      <h2>
+    <div className="home-projects-components" ref={projectsRef}>
+      <h2 className="animation-target">
         <span
           onClick={() =>
             window.open("https://www.3einfrastructure.com/", "_blank")

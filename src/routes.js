@@ -4,6 +4,7 @@ const Gallery = React.lazy(() => import("./pages/gallery/gallery"));
 const Contact = React.lazy(() => import("./pages/contact/contact"));
 const Employment = React.lazy(() => import("./pages/employment/employment"));
 const AboutUs = React.lazy(() => import("./pages/about-us/about-us"));
+const Services = React.lazy(() => import("./pages/services/services"));
 
 export const finalRoutes = [
   {
@@ -29,6 +30,12 @@ export const finalRoutes = [
     name: "employment",
     exact: true,
     component: <Employment />,
+  },
+  {
+    path: "/services",
+    name: "services",
+    exact: true,
+    component: <Services />,
   },
   {
     path: "/about-us",

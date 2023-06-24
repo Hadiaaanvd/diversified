@@ -34,11 +34,12 @@ h2 {
 h3 {
   font-family: "Montserrat", sans-serif;
   /* font-family: "Source Sans Pro"; */
+  /* text-align: center; */
   font-weight: 700;
-  font-size: calc(8px + 2vw);
+  font-size: calc(14px + 1vw);
   cursor: pointer;
   letter-spacing: 0.05em;
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
   color: #454545;
   position: relative;
   line-height: 1.5;

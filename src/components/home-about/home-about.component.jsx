@@ -3,10 +3,17 @@ import React from "react";
 import about1 from "../../assets/about-us/home1.jpg";
 import about2 from "../../assets/about-us/home2.jpg";
 import "./home-about.styles.scss";
-import { Animator, batch, FadeIn, MoveIn } from "react-scroll-motion";
+import {
+  Animator,
+  batch,
+  FadeIn,
+  MoveIn,
+  ScrollPage,
+} from "react-scroll-motion";
 const HomeProjects = () => {
   return (
     <div className="home-about-components">
+      {/* <ScrollPage page={0}> */}
       <div className="about-us-container">
         <Animator animation={batch(FadeIn(), MoveIn(-200, 0))}>
           <div className="about-us-images">
@@ -31,6 +38,7 @@ const HomeProjects = () => {
           </Animator>
         </div>
       </div>
+      {/* </ScrollPage> */}
     </div>
   );
 };

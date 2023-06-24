@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper";
@@ -8,8 +8,6 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-import { Animator, batch, FadeIn, MoveIn } from "react-scroll-motion";
 
 import "./home-content.styles.scss";
 const services = [
@@ -76,12 +74,45 @@ const services = [
 ];
 
 const HomeContent = () => {
+  const contentRef = useRef(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = contentRef.current;
+      const spans = element.querySelectorAll(".animation-target");
+      if (element && isElementInViewport(element)) {
+        spans.forEach((span) => {
+          span.classList.add("run-animation");
+        });
+      } else {
+        spans.forEach((span) => {
+          span.classList.remove("run-animation");
+        });
+      }
+    };
+
+    const isElementInViewport = (el) => {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerWidth || document.documentElement.clientWidth) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
+      );
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check on component mount
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="home-content-component">
-      {/* <Animator animation={batch(FadeIn(), MoveIn(10, 0))}> */}
-      <h2>Our Services</h2>
-      {/* </Animator>
-      <Animator animation={batch(FadeIn(), MoveIn(100, 0))}> */}
+    <div className="home-content-component" ref={contentRef}>
+      <h2 className="animation-target">Our Services</h2>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -92,7 +123,7 @@ const HomeContent = () => {
           rotate: 0,
           stretch: 0,
           depth: 100,
-          modifier: 2.7,
+          modifier: 2.5,
         }}
         pagination={{ el: ".swiper-pagination", clickable: true }}
         navigation={{
@@ -107,7 +138,7 @@ const HomeContent = () => {
           <SwiperSlide key={index}>
             <div className="service-slide-container">
               <div className="service-icon">
-                <ServiceImg className="image" />
+                <ServiceImg className="image animation-target" />
               </div>
               <div className="heading-container">{service.heading}</div>
               <div className="description-container">{service.description}</div>
@@ -126,7 +157,6 @@ const HomeContent = () => {
           </div>
         </div>
       </Swiper>
-      {/* </Animator> */}
     </div>
   );
 };

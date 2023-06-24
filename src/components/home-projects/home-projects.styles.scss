@@ -16,7 +16,7 @@
         text-align: center;
         position: relative;
         &:before{
-            transition: all 1s ease-in-out; 
+            transition: all 2s ease-in-out; 
             content: "";
             position: absolute;
             bottom:-3px;    
@@ -26,22 +26,28 @@
             background-color: #1c7cd7;
 
         }
+       
         .e-logo{
             margin-top:-10px;
             width:100px;
+            fill:none;
+            @media only screen and (max-width: 500px) {
+                width:60px;
+                margin-top:0px;
+                margin-right:5px;
+            }
 
         }
-        &:hover{
+        &:hover, &.run-animation{
             .e-logo{
               path {
                 fill:#1c7cd7;
               }
-    
             }
             
             span{
                 color:#1c7cd7;
-                transition: all 0.5s ease-in-out; 
+                transition: all 2s ease-in-out; 
             }
             &:before{
                 content: "";
