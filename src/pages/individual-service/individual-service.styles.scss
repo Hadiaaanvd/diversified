@@ -1,0 +1,85 @@
+.individual-service-component{
+
+
+    .service-container{
+        padding:60px 13vw;
+        @media only screen and (max-width: 500px) {
+            padding:50px 30px;
+           
+        }
+
+        .service-header{
+            position: relative;
+          
+            .service-image{
+              
+                width:85%;
+                height:500px;
+                &.reverse{
+                    margin-left: auto;
+                }
+                @media only screen and (max-width: 1300px) {
+                    height:350px;
+                }
+                @media only screen and (max-width: 600px) {
+                    height:220px;
+                }
+             
+                
+                img{
+                    // clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+                    object-fit: cover;
+                    width:100%;
+                    max-width:100%;
+                    min-width:100%;
+                    min-height: 100%;
+                    max-height:100%;
+                }
+               
+            }
+            .service-heading{
+                // clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+                clip-path: polygon(93% 0%, 100% 50%, 93% 100%, 0% 100%, 0% 50%, 0% 0%);
+                width:fit-content;
+                right:0;
+                bottom:10px;
+                position:absolute;
+                // white-space: nowrap;
+                // margin-left:-40%;
+                margin-bottom:40px;
+                padding:30px 50px;
+                background:#1171a4;
+                color:white !important; 
+                &.reverse{
+                   left:0;
+                }  
+              
+            }
+
+          
+        }
+        .service-content{
+        
+            width:100%;
+            clip-path: polygon(95% 0%, 100% 50%, 95% 100%, 0% 100%, 0% 50%, 0% 0%);
+            clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 5% 100%, 0% 50%, 5% 0%);
+            // margin-right:20%;
+            // margin:0 auto;
+            // box-shadow: rgba(170, 170, 170, 0.4) 0px 7px 19px 0px;
+            // filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1)) !important;
+            // filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+            margin-top:40px;
+            padding:30px 80px;
+            font-size:16px;
+            font-weight: 400;
+            line-height:1.8;
+            background-color: #f5f2f2ae;
+            // color:white;
+            // background-color: #393939;
+            // background: linear-gradient(109.5deg, #0b69a1 11.2%, rgb(41, 123, 137) 74.6%);
+            
+        }
+
+     
+    }
+}
