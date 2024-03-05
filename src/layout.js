@@ -1,13 +1,17 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { Route, Routes, Navigate } from "react-router";
 import { finalRoutes } from "./routes";
 import Navbar from "./components/navbar/navbar.component";
+
 import Footer from "./components/footer/footer.component";
 
 const Layout = () => {
+  const location = useLocation();
+
   return (
     <div className="layout-component">
-      <Navbar />
+      {location.pathname === "/" ? <Navbar /> : ""}
       <div className="layout">
         <React.Suspense fallback="">
           <Routes>

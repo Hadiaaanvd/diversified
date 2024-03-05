@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "./gallery.styles.scss";
 
 function CarouselComponent({ images, actualImages }) {
-  console.log(images);
   const [modalOpen, setModalOpen] = React.useState(false);
   const [selectedImage, setSelectedImage] = React.useState(0);
 

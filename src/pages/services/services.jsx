@@ -1,21 +1,24 @@
 import React from "react";
 import BannerInner from "../../components/banner-inner/banner-inner.component";
+import { useNavigate } from "react-router";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Navigation } from "swiper";
+import { Pagination, Navigation } from "swiper";
 
 import { ReactComponent as ServiceImg } from "../../assets/service/scg-icon.svg";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import images, {
+import {
   distribution,
+  makeUrl,
   other,
   transmission,
 } from "../../utils/imagesDb";
 import "./services.styles.scss";
 
 const Services = () => {
+  const navigate = useNavigate();
   const chunkSize = 3; // Number of services per slide
   const distributionSlides = Math.ceil(distribution.length / chunkSize);
   const distributionChunks = Array.from(
@@ -50,7 +53,15 @@ const Services = () => {
               <div className="services-container">
                 {chunk.map((item, itemIndex) =>
                   item.heading ? (
-                    <div className="card-container" key={itemIndex}>
+                    <div
+                      className="card-container"
+                      onClick={() =>
+                        navigate(
+                          `/services/distribution/${makeUrl(item.heading)}`
+                        )
+                      }
+                      key={itemIndex}
+                    >
                       <div className="card-header">
                         <div className="card-image">
                           <div className="image-container">
@@ -92,7 +103,15 @@ const Services = () => {
               <div className="services-container">
                 {chunk.map((item, itemIndex) =>
                   item.heading ? (
-                    <div className="card-container" key={itemIndex}>
+                    <div
+                      className="card-container"
+                      onClick={() =>
+                        navigate(
+                          `/services/transmission/${makeUrl(item.heading)}`
+                        )
+                      }
+                      key={itemIndex}
+                    >
                       <div className="card-header">
                         <div className="card-image">
                           <div className="image-container">
@@ -133,7 +152,13 @@ const Services = () => {
             <SwiperSlide key={index}>
               <div className="services-container">
                 {chunk.map((item, itemIndex) => (
-                  <div className="card-container" key={itemIndex}>
+                  <div
+                    className="card-container"
+                    onClick={() =>
+                      navigate(`/services/other/${makeUrl(item.heading)}`)
+                    }
+                    key={itemIndex}
+                  >
                     <div className="card-header">
                       <div className="card-image">
                         <div className="image-container">

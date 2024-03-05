@@ -28,9 +28,7 @@
         margin-top:30px;
         margin-bottom:20px;
         height:calc(30px + 1vw);
-        filter: brightness(1.5);
         &.other{
-            filter: brightness(1.5);
             height:calc(20px + 1.3vw);
         }
         @media only screen and (max-width: 800px) {

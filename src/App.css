@@ -44,6 +44,19 @@ h3 {
   position: relative;
   line-height: 1.5;
 }
+h4 {
+  font-family: "Montserrat", sans-serif;
+  /* font-family: "Source Sans Pro"; */
+  /* text-align: center; */
+  font-weight: 700;
+  font-size: calc(14px + 0.65vw);
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  /* text-transform: uppercase; */
+  color: #454545;
+  position: relative;
+  line-height: 1.5;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -55,8 +68,13 @@ h3 {
   color: white;
 }
 
+a {
+  color: #1171a4;
+  font-weight: 600;
+}
+
 button {
-  background: #0b69a1;
+  background: #1171a4;
   border: 0;
   color: white;
   font-size: 12px;

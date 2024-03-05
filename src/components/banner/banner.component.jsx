@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import video from "../../assets/backvideo.mp4";
+import image from "../../assets/back-image.jpg";
 import footer from "../../assets/footer.png";
 
 import "./banner.styles.scss";
@@ -11,9 +11,7 @@ const Banner = () => {
     const handleScroll = () => {
       const element = elementRef.current;
       const spans = element.querySelectorAll(".animation-target");
-      console.log("hereee", isElementInViewport(element));
       if (element && isElementInViewport(element)) {
-        console.log("here");
         spans.forEach((span) => {
           span.classList.add("run-animation");
         });
@@ -26,7 +24,7 @@ const Banner = () => {
 
     const isElementInViewport = (el) => {
       const rect = el.getBoundingClientRect();
-      console.log("rect", rect, rect.bottom <= window.innerHeight);
+
       return (
         rect.top >= 0 &&
         rect.left >= 0 &&
@@ -59,9 +57,8 @@ const Banner = () => {
         </p>
       </div>
       <div className="banner-image">
-        <video autoPlay muted loop id="myVideo">
-          <source src={video} type="video/mp4" />
-        </video>
+        <img src={image} alt="" id="myVideo" />
+
         <img className="footer-logo" src={footer} alt="" />
       </div>
     </div>

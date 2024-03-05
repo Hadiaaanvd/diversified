@@ -13,7 +13,7 @@ const AboutusContent = () => {
           grew, we began to receive additional opportunities in the transmission
           pipeline market, necessitating the hiring of additional personnel and
           investing in tools, equipment and technology. Today, we continue to
-          expand in to new areas and create lasting relationships with our
+          expand into new areas and create lasting relationships with our
           customers. <br /> <br />
           While we are dedicated to investing in tools, equipment, and
           technology to provide our customers with a high-quality product, our

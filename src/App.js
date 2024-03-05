@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import ScrollToTop from "./components/scroll/scroll.jsx";
-import { Animator, ScrollContainer, ScrollPage } from "react-scroll-motion";
+import { ScrollContainer } from "react-scroll-motion";
 
 import Layout from "./layout";
 

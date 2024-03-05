@@ -3,7 +3,11 @@
     margin:0;
 
     .random{
+        z-index:10000;
         height:fit-content !important;
+        &.random-about {
+            margin-top:-70px !important;
+        }
     }
     
 }

@@ -20,10 +20,10 @@ export default images;
 export const distribution = [
   {
     category: "Distribution",
-    image: images[0],
+    image: images[22],
     heading: "New Business Main, Service & Meter",
     description:
-      "We can install new main, service, and meter lines for your natural gas utility needs. This includes everything from the main line that runs from the gas main to your property to the service line that runs from your meter to your appliances. We can also install new meters and regulators.",
+      "We can install new or upgrade existing gas facilities to serve residential, commercial and industrial customers.  This includes high pressure steel, medium high pressure plastic, main & service taps, meter sets and customer relights.",
   },
   {
     category: "Distribution",
@@ -37,14 +37,15 @@ export const distribution = [
     image: images[2],
     heading: "Regulator Stations",
     description:
-      "We can install and maintain regulator stations to control the pressure of your natural gas lines. This is important for ensuring that the pressure in your lines is safe and consistent.",
+      "We can fabricate and install new or replacement regulator stations.  This includes grading, foundations, structural supports, fencing, sound barriers, power & communications.",
   },
+
   {
     category: "Distribution",
     image: images[3],
     heading: "Customer/Developer/DOT Relocations",
     description:
-      "We can relocate your natural gas lines to accommodate new construction or development. This is important for ensuring that your lines are not damaged by construction activities.",
+      "We can perform all gas facility relocations up to 36 diameter to resolve construction conflicts with transportation improvements, greenfield developments and property owner improvements.",
   },
   {
     category: "Distribution",
@@ -58,14 +59,14 @@ export const distribution = [
     image: images[5],
     heading: "Master Meter Conversions",
     description:
-      "We can convert your natural gas meters to master meters to improve the efficiency of your utility operations. This can save you money on your natural gas bills.",
+      "We can uprate private gas systems to allow individual metering.",
   },
   {
     category: "Distribution",
     image: images[6],
-    heading: "Cased Pipe Remediation",
+    heading: "Casing Remediation",
     description:
-      "We can repair damaged cased pipe to prevent leaks and ensure the integrity of your natural gas lines. This is important for preventing leaks and ensuring the safety of your natural gas lines.",
+      "We can remediate shorted casings through full or partial casing removal, pipeline misalignment adjustment, or annulus wax injection.",
   },
   {
     category: "Distribution",
@@ -86,16 +87,29 @@ export const distribution = [
     image: images[9],
     heading: "Maintenance & Emergency Work",
     description:
-      "We can provide routine maintenance and emergency service for your natural gas lines to ensure that they are in good working order. This includes everything from inspecting your lines for leaks to repairing any damage that is found.",
+      "We can provide support for emergency work and perform smaller maintenance work like valve replacements, inactive service retirements, mechanical fitting removal and more.",
   },
   {
     category: "Distribution",
     image: images[10],
     heading: "Mainline Pipe Work (up to 36”)",
     description:
-      "We can repair damaged cased pipe to prevent leaks and ensure the integrity of your natural gas lines. This is important for preventing leaks and ensuring the safety of your natural gas lines.",
+      "We can install new or replace gas systems to improve pressure, serve new areas or replace aging infrastructure. We are experienced with steel facilities up to 36 diameter and plastic facilities up to 12 diameter.",
   },
-  {},
+  {
+    category: "Distribution",
+    image: images[7],
+    heading: "Restoration",
+    description:
+      "With all our work, we can restore hard surfaces & landscaping in construction areas to preconstruction condition or better.",
+  },
+  {
+    category: "Distribution",
+    image: images[10],
+    heading: "Grouting",
+    description:
+      "We can grout abandoned pipelines to prevent eventual collapse after pipe deterioration.",
+  },
 ];
 
 export const transmission = [
@@ -103,7 +117,7 @@ export const transmission = [
     image: images[11],
     heading: "Mainline Pipe Work (up to 36”)",
     description:
-      "We can install and maintain mainline pipe work up to 36 inches in diameter. This includes everything from installing new pipe to repairing damaged pipe.",
+      "We can install new or replace transmission pipelines up to 36 diameter to improve pressure, serve new areas or replace aging infrastructure.  Our welders, pipe fitters and coaters perform are highly skilled.",
   },
   {
     image: images[12],
@@ -136,18 +150,29 @@ export const transmission = [
       "We can repair damaged HCA (High Carbon Steel) casing to prevent leaks and ensure the integrity of your natural gas lines. This is important for preventing leaks and ensuring the safety of your natural gas lines.",
   },
   {
+    image: images[16],
+    heading: "Restoration",
+    description:
+      "With all our work, we can restore hard surfaces & landscaping in construction areas to preconstruction condition or better.",
+  },
+  {
     image: images[17],
     heading: "Station Work",
     description:
-      "We can install and maintain natural gas distribution stations, including regulator stations, compressor stations, and metering stations. This is important for ensuring that your natural gas lines are properly regulated and that your meters are accurate",
+      "We can fabricate and install new or replacement City Gate stations.  This includes everything from grading, concrete foundations, fencing, sound barriers to power & communications. We can retrofit existing stations with Launcher/Recievers, Heaters, odorizers, Filter/Separators and modify meter runs.",
   },
   {
     image: images[18],
     heading: "Pipeline Integrity Work",
     description:
-      "We can perform a variety of pipeline integrity work, including ICDA (Internal Corrosion Direct Assessment) and ECDA (External Corrosion Direct Assessment). This is important for preventing leaks and ensuring the safety of your natural gas lines",
+      "We can retrofit pipelines to make them piggable, support in-line inspection, expose pipe for direct assessment, make repairs through structural wraps or pipe replacement.",
   },
-  {},
+  {
+    image: images[18],
+    heading: "AC Mitigation",
+    description:
+      "We can install zinc ribbon, gradiant mats, solid state decouplers and test stations to protect the pipeline from AC interference.",
+  },
 ];
 
 export const other = [
@@ -155,18 +180,22 @@ export const other = [
     image: images[19],
     heading: "Vacuum Excavation",
     description:
-      "We can use vacuum excavation to safely and efficiently excavate around buried utilities, such as natural gas lines. This is important for preventing damage to your natural gas lines during construction activities",
+      "We can provide soft dig services to prevent damage to critcal infrastructure within Plants, Stations and in areas with utilty congestion or unlocatable utilities.",
   },
   {
     image: images[20],
     heading: "System Records Creation",
     description:
-      "We can create system records for your natural gas distribution system to improve the efficiency of your utility operations. This can save you time and money.",
+      "We can find and expose gas facilities to establish missing system records such as location, pipe size and material.",
   },
   {
     image: images[21],
     heading: "Constructability Consultation",
     description:
-      "We can provide constructability consultation services to help you plan and execute your natural gas distribution projects. This can help you avoid costly mistakes. ",
+      "We can review prelimnary project plans and provide constructability advice on route, work space requirements, geotech recomendations and construction methods to lower costs and avoid scope changes.",
   },
 ];
+
+export const makeUrl = (str) => {
+  return str.replace(/\s+/g, "-").replace(/\//g, "-").toLowerCase();
+};

@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/logo.svg";
 
-import { useNavigate } from "react-router-dom";
-import { Nav, Navbar } from "react-bootstrap";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Dropdown, Nav, NavDropdown, Navbar } from "react-bootstrap";
 
 import "./navbar.styles.scss";
+import {
+  distribution,
+  makeUrl,
+  other,
+  transmission,
+} from "../../utils/imagesDb";
 const Navbarr = () => {
+  const location = useLocation().pathname;
+  const [show, setShow] = useState(true);
   const navigate = useNavigate();
 
   const handleClick = (id) => {
@@ -33,12 +41,79 @@ const Navbarr = () => {
             >
               About Us
             </Nav.Link>
-            <Nav.Link
-              className="navitem"
-              onClick={() => handleClick("/services")}
+            <Dropdown
+              className={`show navitem ${
+                location.includes("/service") ? "current" : ""
+              }`}
             >
-              Services
-            </Nav.Link>
+              <Dropdown.Toggle>
+                <span
+                  onClick={() => {
+                    handleClick("/services");
+                    setShow(false);
+                  }}
+                >
+                  Services
+                </span>
+              </Dropdown.Toggle>
+              {show && (
+                <div className="dropdown-menu">
+                  <NavDropdown.Item>
+                    Distribution
+                    <div className="sub-dropdown">
+                      {distribution.map((item, index) => (
+                        <NavDropdown.Item
+                          key={index}
+                          onClick={() =>
+                            navigate(
+                              `/services/distribution/${makeUrl(item.heading)}`
+                            )
+                          }
+                        >
+                          {item.heading}
+                        </NavDropdown.Item>
+                      ))}
+                    </div>
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item>
+                    Transmission
+                    <div className="sub-dropdown">
+                      {transmission.map((item, index) => (
+                        <NavDropdown.Item
+                          key={index}
+                          onClick={() =>
+                            navigate(
+                              `/services/transmission/${makeUrl(item.heading)}`
+                            )
+                          }
+                        >
+                          {item.heading}
+                        </NavDropdown.Item>
+                      ))}
+                    </div>
+                  </NavDropdown.Item>
+
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item>
+                    Other Services
+                    <div className="sub-dropdown">
+                      {other.map((item, index) => (
+                        <NavDropdown.Item
+                          key={index}
+                          onClick={() =>
+                            navigate(`/services/other/${makeUrl(item.heading)}`)
+                          }
+                        >
+                          {item.heading}
+                        </NavDropdown.Item>
+                      ))}
+                    </div>
+                  </NavDropdown.Item>
+                </div>
+              )}
+            </Dropdown>
 
             <Nav.Link onClick={() => navigate("/gallery")} className="navitem">
               Gallery

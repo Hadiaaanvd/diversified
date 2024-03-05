@@ -10,63 +10,77 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./home-content.styles.scss";
+import { useNavigate } from "react-router-dom";
+import { makeUrl } from "../../utils/imagesDb";
 const services = [
   {
+    type: "distribution",
     heading: "New Business Main, Service & Meter",
     description:
       "We can install new main, service, and meter lines for your natural gas utility needs.",
   },
   {
+    type: "distribution",
     heading: "Pressure Improvements",
     description:
       "We can increase the pressure in your natural gas lines to ensure that you have a reliable supply of gas.",
   },
   {
+    type: "distribution",
     heading: "Regulator Stations",
     description:
       "We can install and maintain regulator stations to control the pressure of your natural gas lines.",
   },
   {
     heading: "Customer/Developer/DOT Relocations",
+    type: "distribution",
     description:
       "We can relocate your natural gas lines to accommodate new construction or development. ",
   },
   {
     heading: "DIMP Retirements & Renewals",
+    type: "distribution",
     description:
       "We can retire and renew your DIMP lines to ensure that they are in compliance with safety regulations. ",
   },
   {
+    type: "distribution",
     heading: "Master Meter Conversions",
     description:
       "We can convert your natural gas meters to master meters to improve the efficiency of your utility operations.",
   },
   {
+    type: "transmission",
     heading: "Mainline Pipe Work (up to 36”)",
     description:
       "We can install and maintain mainline pipe work up to 36 inches in diameter",
   },
   {
+    type: "transmission",
     heading: "New Installation",
     description:
       "We can install new mainline pipe work to connect new customers to the natural gas distribution system.",
   },
   {
+    type: "transmission",
     heading: "Renewals & Relocations",
     description:
       "We can relocate and renew existing mainline pipe work to accommodate new construction or development.",
   },
   {
+    type: "transmission",
     heading: "Retirement & Retesting",
     description:
       "We can retire and retest existing mainline pipe work to ensure that it is in compliance with safety regulations. ",
   },
   {
+    type: "transmission",
     heading: "Interconnects",
     description:
       "We can install and maintain interconnects between different  natural gas distribution systems.",
   },
   {
+    type: "transmission",
     heading: "HCA Casing Remediation",
     description:
       "We can repair damaged HCA (High Carbon Steel) casing to prevent leaks and ensure the integrity of your natural gas lines.",
@@ -75,6 +89,7 @@ const services = [
 
 const HomeContent = () => {
   const contentRef = useRef(null);
+  const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
       const element = contentRef.current;
@@ -142,7 +157,16 @@ const HomeContent = () => {
               </div>
               <div className="heading-container">{service.heading}</div>
               <div className="description-container">{service.description}</div>
-              <div className="read-more">Read More</div>
+              <div
+                onClick={() =>
+                  navigate(
+                    `/services/${service.type}/${makeUrl(service.heading)}`
+                  )
+                }
+                className="read-more"
+              >
+                Read More
+              </div>
             </div>
           </SwiperSlide>
         ))}

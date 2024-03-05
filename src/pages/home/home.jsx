@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="home-page">
       <Banner />
-      <ScrollPage className="random">
+      <ScrollPage className="random-about random">
         <HomeAbout />
       </ScrollPage>
       <ScrollPage className="random">

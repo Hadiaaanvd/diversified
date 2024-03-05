@@ -6,10 +6,11 @@ import third from "../../assets/banner/3.jpg";
 import fourth from "../../assets/banner/4.jpg";
 import fifth from "../../assets/banner/5.jpg";
 import seven from "../../assets/banner/7.jpg";
+import NavbarInner from "../navbar-inner/navbar-inner.component";
 import "./banner-inner.styles.scss";
 
 const imagesArray = [first, second, third, fourth, fifth, seven];
-const BannerInner = ({ index }) => {
+const BannerInner = ({ index, breadcrumb }) => {
   const location = useLocation();
   const heading = location.pathname
     .replace(/\//g, " ")
@@ -20,7 +21,7 @@ const BannerInner = ({ index }) => {
 
   return (
     <div className="banner-inner-component">
-      {console.log(imagesArray[index].index)}
+      <NavbarInner />
       <div
         className="banner-image"
         style={{
@@ -29,7 +30,17 @@ const BannerInner = ({ index }) => {
         }}
       >
         <div className="title">
-          <span>{heading === " S" ? "Projects" : heading}</span>
+          <span>
+            {breadcrumb ? "Service" : heading === " S" ? "Projects" : heading}
+            {breadcrumb ? (
+              <span className="breadcrumb">
+                <i className="fa-solid fa-chevron-right"></i>
+                {breadcrumb}
+              </span>
+            ) : (
+              ""
+            )}
+          </span>
         </div>
       </div>
     </div>

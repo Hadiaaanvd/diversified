@@ -3,8 +3,7 @@ import React, { useEffect, useRef } from "react";
 import project1 from "../../assets/projects/project1.jpg";
 import project2 from "../../assets/projects/project2.png";
 import project3 from "../../assets/projects/project3.jpg";
-import project7 from "../../assets/projects/project7.png";
-import project4 from "../../assets/projects/player.png";
+import project4 from "../../assets/players.png";
 import { ReactComponent as Elogo } from "../../assets/projects/3e.svg";
 
 import "./home-projects.styles.scss";
@@ -14,13 +13,11 @@ const projects = [
     id: "/project/recovery-from-electrical-catastrophe",
     link: "http://www.dusllc.com/",
     image: project1,
-    title: "Recovery From Electrical Catastrophe",
   },
   {
     id: "2",
     link: "http://www.benton-georgia.com/",
     image: project2,
-    title: "Hartsfield Jackson Intl Airport",
   },
   {
     id: "/project/compressed-natural-gas-fueling-station",
@@ -68,7 +65,7 @@ const HomeProjects = () => {
 
     const isElementInViewport = (el) => {
       const rect = el.getBoundingClientRect();
-      console.log("rect", rect, rect.bottom <= window.innerHeight);
+
       return (
         rect.top >= 0 &&
         rect.left >= 0 &&
@@ -133,16 +130,7 @@ const HomeProjects = () => {
             </div>
           ))}
       </div>
-      <div className="projects-container">
-        <div
-          className="project mx-auto"
-          onClick={() =>
-            window.open("https://consciousdatacenters.com/", "_blank")
-          }
-        >
-          <img src={project7} alt="" />
-        </div>
-      </div>
+      <br />
     </div>
   );
 };
